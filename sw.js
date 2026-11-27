@@ -3,7 +3,7 @@
    Si agregas un archivo nuevo en js/pestanas/, añádelo a ARCHIVOS.
    ========================================================= */
 
-const CACHE = 'motor-radial-v2';
+const CACHE = 'motor-radial-v3';
 
 const ARCHIVOS = [
   './',

@@ -1,10 +1,10 @@
 /* =========================================================
    SERVICE WORKER (CACHÉ OFFLINE + ACTUALIZACIÓN BLINDADA)
-   Sube el número de versión (v5, v6...) cuando publiques
+   Sube el número de versión (v6, v7...) cuando publiques
    cambios importantes y agrega aquí las nuevas imágenes.
    ========================================================= */
 
-const CACHE = 'motor-radial-v6';
+const CACHE = 'motor-radial-v7';
 
 const ARCHIVOS = [
   './',
@@ -15,14 +15,16 @@ const ARCHIVOS = [
   './img/pieza1.png',
   './img/pieza2.png',
   './img/pieza3.png',
-  './img/Imagen1.png',
-  './img/Imagen2.png',
-  './img/Imagen3.png',
-  './img/Imagen4.png',
-  './img/Imagen5.png',
-  './img/Imagen6.png',
-  './img/Imagen7.png',
-  './img/Imagen8.png',
+  './img/Imagen22.png',
+  './img/Imagen33.gif',
+  './img/img_piezas/Imagen1.png',
+  './img/img_piezas/Imagen2.png',
+  './img/img_piezas/Imagen3.png',
+  './img/img_piezas/Imagen4.png',
+  './img/img_piezas/Imagen5.png',
+  './img/img_piezas/Imagen6.png',
+  './img/img_piezas/Imagen7.png',
+  './img/img_piezas/Imagen8.png',
   './css/tema.css',
   './css/estilos.css',
   './js/registro.js',

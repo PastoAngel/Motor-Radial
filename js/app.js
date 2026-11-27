@@ -20,6 +20,7 @@
     'ejercicio-op2': 'grafito',
     'ejercicio-op3': 'grafito',
     'ejercicio-interpretacion': 'grafito',
+    'mantenimiento': 'grafito',
     'evidencias': 'grafito'
   };
 

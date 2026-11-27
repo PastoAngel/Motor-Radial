@@ -1,10 +1,10 @@
 /* =========================================================
    SERVICE WORKER (CACHÉ OFFLINE + ACTUALIZACIÓN BLINDADA)
-   Sube el número de versión (v7, v8...) cuando publiques
+   Sube el número de versión (v8, v9...) cuando publiques
    cambios importantes y agrega aquí las nuevas imágenes.
    ========================================================= */
 
-const CACHE = 'motor-radial-v8';
+const CACHE = 'motor-radial-v9';
 
 const ARCHIVOS = [
   './',

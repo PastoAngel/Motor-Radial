@@ -76,6 +76,17 @@
     if (id === 'despiece-fichas') { tCad = 0; cadHover = -1; }
     if (id.startsWith('ejercicio-')) tEq = 0;
 
+    // Video de Mantenimiento: se reproduce 1 sola vez al entrar a la pestaña
+    const vidMant = $('#vid_mant');
+    if (vidMant) {
+      if (id === 'mantenimiento') {
+        vidMant.currentTime = 0;
+        vidMant.play().catch(() => {});
+      } else {
+        vidMant.pause();
+      }
+    }
+
     sl.forEach((s, i) => s.classList.toggle('on', i === cur));
     [...dots.children].forEach((d, i) => d.classList.toggle('on', i === cur));
   }

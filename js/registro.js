@@ -60,12 +60,3 @@ const H4 = [
   ['1885', 'Karl Benz', 'Patent-Motorwagen: motor de 4 tiempos en el que se considera el primer automóvil.'],
   ['1892–97', 'Rudolf Diesel', 'Propone el encendido por compresión; el primer motor funcional es de 1897.']
 ];
-
-const H6 = [
-  ['1901', 'Manly', 'Radial de 5 cilindros, refrigerado por agua, 52 hp a 950 rpm, para el Aerodrome de Langley.'],
-  ['1903–04', 'Ellehammer', 'Primer radial refrigerado por aire: 3 cilindros (5 cilindros en 1907).'],
-  ['1909–19', 'Era rotativa', 'Gnome, Le Rhône y Clerget dominan; su cigüeñal hueco limitaba el aire y combustible.'],
-  ['1922', 'Lawrance J-1', 'Cilindros de aluminio con camisa de acero: 300 h sin fallar (lo normal eran 50).'],
-  ['1925', 'Whirlwind y Wasp', 'Wright J-5 (225 hp), «el primer motor realmente fiable»; nace Pratt & Whitney con el R-1340 Wasp.'],
-  ['1939–45', 'Segunda Guerra', 'R-2800 Double Wasp: 125 334 fabricados. Después, 28 cilindros (R-4360) y el relevo de los jets.']
-];

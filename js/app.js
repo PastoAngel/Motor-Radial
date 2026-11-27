@@ -12,7 +12,6 @@
   const TEMAS = {
     'historia-combustion': 'indigo',
     'aviacion': 'indigo',
-    'historia-radial': 'indigo',
     'despiece': 'petroleo',
     'despiece-fichas': 'petroleo',
     'linea': 'petroleo',

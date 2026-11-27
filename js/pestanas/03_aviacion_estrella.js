@@ -20,15 +20,3 @@ var PESTANA_AVIACION = {
 };
 agregarPestana(PESTANA_AVIACION);
 
-var PESTANA_HISTORIA_RADIAL = {
-  id: 'historia-radial',
-  alineacion: '',
-  html: `
-    <h2>Nace el motor de estrella</h2>
-    ${tl(H6)}
-    <div class="note">
-      El Wright J-5 propulsó al Spirit of St. Louis de Lindbergh en el primer vuelo transatlántico en solitario.
-    </div>
-  `
-};
-agregarPestana(PESTANA_HISTORIA_RADIAL);

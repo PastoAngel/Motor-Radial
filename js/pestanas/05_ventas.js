@@ -219,7 +219,7 @@ var PESTANA_EJERCICIO_3 = {
 };
 agregarPestana(PESTANA_EJERCICIO_3);
 
-// ---- VENTANA 7: MANTENIMIENTO (FOTO + ANIMACIÓN GIF) ----
+// ---- VENTANA 7: MANTENIMIENTO (FOTO + VIDEO EN BUCLE) ----
 var PESTANA_MANTENIMIENTO = {
   id: 'mantenimiento',
   alineacion: '',
@@ -227,7 +227,7 @@ var PESTANA_MANTENIMIENTO = {
     <h2>Mantenimiento</h2>
     <div style="display:grid;grid-template-columns:.92fr 1.2fr;gap:1.4vw;align-items:center">
       <img src="./img/Imagen22.png" alt="Mantenimiento en compresor" style="width:100%;max-height:56vh;object-fit:contain;border-radius:12px;display:block">
-      <img src="./img/Imagen33.gif" alt="Compresor de aire de pistón" style="width:100%;max-height:56vh;object-fit:contain;border-radius:12px;display:block">
+      <video src="./img/Multimedia1.mp4" autoplay loop muted playsinline style="width:100%;max-height:56vh;object-fit:contain;border-radius:12px;display:block"></video>
     </div>
   `
 };

@@ -1,10 +1,10 @@
 /* =========================================================
    SERVICE WORKER (CACHÉ OFFLINE + ACTUALIZACIÓN BLINDADA)
-   Sube el número de versión (v6, v7...) cuando publiques
+   Sube el número de versión (v7, v8...) cuando publiques
    cambios importantes y agrega aquí las nuevas imágenes.
    ========================================================= */
 
-const CACHE = 'motor-radial-v7';
+const CACHE = 'motor-radial-v8';
 
 const ARCHIVOS = [
   './',
@@ -16,7 +16,7 @@ const ARCHIVOS = [
   './img/pieza2.png',
   './img/pieza3.png',
   './img/Imagen22.png',
-  './img/Imagen33.gif',
+  './img/Multimedia1.mp4',
   './img/img_piezas/Imagen1.png',
   './img/img_piezas/Imagen2.png',
   './img/img_piezas/Imagen3.png',
@@ -72,7 +72,7 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     fetch(e.request, { cache: 'no-cache' })
       .then(res => {
-        if (res && res.ok) {
+        if (res && res.status === 200) {
           const copia = res.clone();
           caches.open(CACHE).then(c => c.put(e.request, copia));
         }

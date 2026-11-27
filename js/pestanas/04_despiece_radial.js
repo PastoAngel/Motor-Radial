@@ -18,13 +18,13 @@ agregarPestana(PESTANA_DESPIECE);
 
 // Colores e imágenes de las 7 piezas para la ventana estilo CAD
 const CAD_PIEZAS = [
-  ['PISTÓN', 'Sube y baja en el cilindro al recibir la fuerza de la combustión.', '#a855f7', 'imagen2.png', ''],
-  ['BIELA', 'Une el pistón con el cigüeñal y convierte su vaivén en giro.', '#38bdf8', 'imagen3.png', ''],
-  ['BIELA AUXILIAR', 'Se articula en la biela principal para mover los demás pistones.', '#ff7a18', 'imagen4.png', ''],
-  ['CIGÜEÑAL', 'Convierte el vaivén del pistón en giro.', '#f59e0b', 'imagen5.png', ''],
-  ['CAMISA DE SECCIÓN', 'Cilindro donde se desliza el pistón.', '#10b981', 'imagen6.png', ''],
-  ['TAPETA', 'Tapa que cierra y sella el cilindro.', '#06b6d4', 'imagen7.png', ''],
-  ['CUERPO', 'Bloque central que sostiene los cilindros y aloja el cigüeñal.', '#34d399', 'imagen8.png', 'full']
+  ['PISTÓN', 'Sube y baja en el cilindro al recibir la fuerza de la combustión.', '#a855f7', 'Imagen2.png', ''],
+  ['BIELA', 'Une el pistón con el cigüeñal y convierte su vaivén en giro.', '#38bdf8', 'Imagen3.png', ''],
+  ['BIELA AUXILIAR', 'Se articula en la biela principal para mover los demás pistones.', '#ff7a18', 'Imagen4.png', ''],
+  ['CIGÜEÑAL', 'Convierte el vaivén del pistón en giro.', '#f59e0b', 'Imagen5.png', ''],
+  ['CAMISA DE SECCIÓN', 'Cilindro donde se desliza el pistón.', '#10b981', 'Imagen6.png', ''],
+  ['TAPETA', 'Tapa que cierra y sella el cilindro.', '#06b6d4', 'Imagen7.png', ''],
+  ['CUERPO', 'Bloque central que sostiene los cilindros y aloja el cigüeñal.', '#34d399', 'Imagen8.png', 'full']
 ];
 
 var PESTANA_DESPIECE_FICHAS = {
@@ -36,7 +36,7 @@ var PESTANA_DESPIECE_FICHAS = {
     <div class="cad-grid">
       <div class="cad-left">
         <div class="cad-hero">
-          <img src="./img/img_piezas/imagen1.png" alt="Despiece completo">
+          <img src="./img/img_piezas/Imagen1.png" alt="Despiece completo">
         </div>
         <div class="cad-flow-box">
           <b>¿CÓMO FUNCIONA?</b>
@@ -75,4 +75,4 @@ var PESTANA_RADIAL = {
     <label>Velocidad <input id="sp" type="range" min="0" max="3" step=".1" value="1"></label>
   `
 };
-agregarPestana(PESTANA_RADIAL);
+// agregarPestana(PESTANA_RADIAL);

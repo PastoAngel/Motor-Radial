@@ -1,24 +1,28 @@
 /* =========================================================
-   SERVICE WORKER (CACHÉ OFFLINE + ACTUALIZACIÓN RÁPIDA)
-   Sube el número de versión (v4, v5...) cuando publiques
+   SERVICE WORKER (CACHÉ OFFLINE + ACTUALIZACIÓN BLINDADA)
+   Sube el número de versión (v5, v6...) cuando publiques
    cambios importantes y agrega aquí las nuevas imágenes.
    ========================================================= */
 
-const CACHE = 'motor-radial-v5';
+const CACHE = 'motor-radial-v6';
 
 const ARCHIVOS = [
   './',
   './index.html',
   './manifest.json',
   './img/icon.svg',
-  './img/img_piezas/imagen1.png',
-  './img/img_piezas/imagen2.png',
-  './img/img_piezas/imagen3.png',
-  './img/img_piezas/imagen4.png',
-  './img/img_piezas/imagen5.png',
-  './img/img_piezas/imagen6.png',
-  './img/img_piezas/imagen7.png',
-  './img/img_piezas/imagen8.png',
+  './img/compresor.png',
+  './img/pieza1.png',
+  './img/pieza2.png',
+  './img/pieza3.png',
+  './img/Imagen1.png',
+  './img/Imagen2.png',
+  './img/Imagen3.png',
+  './img/Imagen4.png',
+  './img/Imagen5.png',
+  './img/Imagen6.png',
+  './img/Imagen7.png',
+  './img/Imagen8.png',
   './css/tema.css',
   './css/estilos.css',
   './js/registro.js',
@@ -32,12 +36,16 @@ const ARCHIVOS = [
   './js/app.js'
 ];
 
-// Instala y descarga archivos frescos (sin usar caché HTTP vieja)
+// Instala y descarga archivos frescos sin abortar si algún opcional da 404
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE)
-      .then(c => Promise.all(
-        ARCHIVOS.map(url => c.add(new Request(url, { cache: 'reload' })))
+      .then(c => Promise.allSettled(
+        ARCHIVOS.map(url =>
+          fetch(new Request(url, { cache: 'reload' }))
+            .then(res => (res && res.ok ? c.put(url, res) : null))
+            .catch(() => null)
+        )
       ))
       .then(() => self.skipWaiting())
   );

@@ -1,16 +1,24 @@
 /* =========================================================
    SERVICE WORKER (CACHÉ OFFLINE + ACTUALIZACIÓN RÁPIDA)
-   Sube el número de versión (v3, v4...) cuando publiques
+   Sube el número de versión (v4, v5...) cuando publiques
    cambios importantes y agrega aquí las nuevas imágenes.
    ========================================================= */
 
-const CACHE = 'motor-radial-v4';
+const CACHE = 'motor-radial-v5';
 
 const ARCHIVOS = [
   './',
   './index.html',
   './manifest.json',
   './img/icon.svg',
+  './img/img_piezas/imagen1.png',
+  './img/img_piezas/imagen2.png',
+  './img/img_piezas/imagen3.png',
+  './img/img_piezas/imagen4.png',
+  './img/img_piezas/imagen5.png',
+  './img/img_piezas/imagen6.png',
+  './img/img_piezas/imagen7.png',
+  './img/img_piezas/imagen8.png',
   './css/tema.css',
   './css/estilos.css',
   './js/registro.js',

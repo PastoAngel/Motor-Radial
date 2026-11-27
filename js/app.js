@@ -4,7 +4,7 @@
 
 (function () {
   // Tiempos automáticos (en segundos)
-  const DURACION_CICLO = 20;   // Ciclo completo de combustión (4 tiempos)
+  const DURACION_CICLO = 10;   // Ciclo completo de combustión (4 tiempos)
   const TIEMPO_DESPIECE = 20;  // Duración total del ciclo unir/separar en 3D
   const TIEMPO_FICHA = 2.2;    // Cada cuántos segundos resalta la siguiente pieza CAD
 
@@ -13,8 +13,6 @@
     'aviacion': 'indigo',
     'despiece': 'petroleo',
     'despiece-fichas': 'petroleo',
-    'linea': 'petroleo',
-    'v': 'petroleo',
     'ventas': 'grafito',
     'ejercicio-problema': 'grafito',
     'ejercicio-fundamentales': 'grafito',
@@ -222,8 +220,6 @@
       $$('.st li').forEach((l, i) => l.classList.toggle('on', i === s));
     }
     if (id === 'aviacion') $$('.c canvas').forEach(c => d2(c, c.dataset.t, t / 450));
-    if (id === 'linea') d2($('#c9'), 'inline', t / 450);
-    if (id === 'v') d2($('#c10'), 'v', t / 450);
     if (id === 'ejercicio-interpretacion') {
       phi3 += dt * (simInfo.rpm / 900) * 4.2;
       d3Sim($('#c_sim3'), phi3, t / 1000, simInfo);

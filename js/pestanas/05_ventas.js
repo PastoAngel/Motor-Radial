@@ -1,69 +1,23 @@
 /* =========================================================
-   PESTAÑAS: EN LÍNEA, EN V, VENTAS, EJERCICIO POR VENTANAS,
-   EVIDENCIAS Y REFERENCIAS
+   PESTAÑAS: VENTAS, EJERCICIO POR VENTANAS Y REFERENCIAS
    ========================================================= */
-
-var PESTANA_LINEA = {
-  id: 'linea',
-  alineacion: '',
-  html: `
-    <h2>Motor en línea</h2>
-    <div class="row">
-      <canvas id="c9" width="560" height="380"></canvas>
-      <p class="big">
-        Los cilindros van alineados, uno tras otro, sobre un mismo cigüeñal.
-        Es largo y estrecho. Ejemplo: el Wright Flyer de 1903, con 4 cilindros en línea.
-      </p>
-    </div>
-  `
-};
-agregarPestana(PESTANA_LINEA);
-
-var PESTANA_V = {
-  id: 'v',
-  alineacion: '',
-  html: `
-    <h2>Motor en V</h2>
-    <div class="row">
-      <canvas id="c10" width="560" height="380"></canvas>
-      <p class="big">
-        Dos bancos de cilindros forman una «V» y comparten el cigüeñal: queda más corto y compacto que el motor en línea.
-        Ejemplo: el Antoinette V8 (1905), con 8 cilindros en V a 90°.
-      </p>
-    </div>
-  `
-};
-agregarPestana(PESTANA_V);
 
 var PESTANA_VENTAS = {
   id: 'ventas',
   alineacion: '',
   html: `
-    <h2>Ventas y Piezas</h2>
+    <h2>Ventas</h2>
     <div class="g">
       <div class="c" style="--i:0">
-        <!-- <img class="foto" src="./img/pieza1.jpg" alt="Motor completo"> -->
-        <div class="slot-img">📷 Espacio para foto 1<small>./img/pieza1.jpg</small></div>
-        <b>01 · Modelo</b>
-        <h4>Motor Radial Completo</h4>
-        <p>Describe aquí el prototipo, dimensiones o kit educativo.</p>
+        <img class="foto" style="height:48vh;margin-bottom:0;object-fit:contain;background:transparent;border:none" src="./img/pieza1.png" alt="Pieza 1">
       </div>
       <div class="c" style="--i:1">
-        <!-- <img class="foto" src="./img/pieza2.jpg" alt="Pistón y biela"> -->
-        <div class="slot-img">📷 Espacio para foto 2<small>./img/pieza2.jpg</small></div>
-        <b>02 · Detalle</b>
-        <h4>Componentes y Materiales</h4>
-        <p>Describe aquí ventajas, materiales o acabados de las piezas.</p>
+        <img class="foto" style="height:48vh;margin-bottom:0;object-fit:contain;background:transparent;border:none" src="./img/pieza2.png" alt="Pieza 2">
       </div>
       <div class="c" style="--i:2">
-        <!-- <img class="foto" src="./img/pieza3.jpg" alt="Paquete / contacto"> -->
-        <div class="slot-img">📷 Espacio para foto 3<small>./img/pieza3.jpg</small></div>
-        <b>03 · Oferta</b>
-        <h4>Precio y Contacto</h4>
-        <p>Agrega aquí costos, paquetes o datos de contacto.</p>
+        <img class="foto" style="height:48vh;margin-bottom:0;object-fit:contain;background:transparent;border:none" src="./img/pieza3.png" alt="Pieza 3">
       </div>
     </div>
-    <div class="note">Edita los textos y rutas de fotos en <b>js/pestanas/05_ventas.js</b>.</div>
   `
 };
 agregarPestana(PESTANA_VENTAS);
@@ -92,10 +46,7 @@ var PESTANA_EJERCICIO_1 = {
       </div>
 
       <div class="c" style="--i:1;display:flex;flex-direction:column;justify-content:center">
-        <!-- Reemplaza por: <img class="foto" style="height:42vh" src="./img/compresor.jpg" alt="Motor estrella en planta"> -->
-        <div class="slot-img" style="height:42vh;margin-bottom:0">
-          <div>📷 Espacio para imagen del motor / compresor<small>./img/compresor.jpg</small></div>
-        </div>
+        <img class="foto" style="height:42vh;margin-bottom:0;object-fit:contain;background:transparent;border:none" src="./img/compresor.png" alt="Compresor radial en planta">
       </div>
     </div>
   `
@@ -268,45 +219,16 @@ var PESTANA_EJERCICIO_3 = {
 };
 agregarPestana(PESTANA_EJERCICIO_3);
 
-var PESTANA_EVIDENCIAS = {
-  id: 'evidencias',
-  alineacion: '',
-  html: `
-    <h2>Evidencias y Piezas del Proyecto</h2>
-    <div class="g">
-      <div class="c" style="--i:0">
-        <!-- <img class="foto" src="./img/evidencia1.jpg" alt="Evidencia 1"> -->
-        <div class="slot-img">📷 Foto de pieza / armado 1<small>./img/evidencia1.jpg</small></div>
-        <h4>Pieza / Proceso 1</h4>
-        <p>Agrega aquí la descripción de esta pieza o prueba.</p>
-      </div>
-      <div class="c" style="--i:1">
-        <!-- <img class="foto" src="./img/evidencia2.jpg" alt="Evidencia 2"> -->
-        <div class="slot-img">📷 Foto de pieza / armado 2<small>./img/evidencia2.jpg</small></div>
-        <h4>Pieza / Proceso 2</h4>
-        <p>Agrega aquí la descripción de esta pieza o prueba.</p>
-      </div>
-      <div class="c" style="--i:2">
-        <!-- <img class="foto" src="./img/evidencia3.jpg" alt="Evidencia 3"> -->
-        <div class="slot-img">📷 Foto de pieza / armado 3<small>./img/evidencia3.jpg</small></div>
-        <h4>Pieza / Proceso 3</h4>
-        <p>Agrega aquí la descripción de esta pieza o prueba.</p>
-      </div>
-    </div>
-    <div class="note">Guarda tus fotos en <b>img/</b> y reemplaza cada recuadro punteado por su etiqueta <b>&lt;img&gt;</b>.</div>
-  `
-};
-agregarPestana(PESTANA_EVIDENCIAS);
-
 var PESTANA_REFERENCIAS = {
   id: 'referencias',
   alineacion: 'L',
   motor3D: { x: 2.4, s: 1, rx: .3, ry: -.6, spin: 1, rot: 5 },
   html: `
     <h2>Referencias</h2>
-    <p class="big">
-      Bolton, W. (2015). <i>Programmable logic controllers</i> (6th ed.). Newnes.<br>
-      Siemens AG. (2023). <i>SIMATIC controllers – PLC overview</i>. https://www.siemens.com/simatic.
+    <p class="big" style="line-height:1.8">
+      Beer, F. P., Johnston, E. R., Jr., DeWolf, J. T., &amp; Mazurek, D. F. (2020). <i>Mechanics of materials</i> (8th ed.). McGraw-Hill Education.<br><br>
+      Gunston, B. (2006). <i>World encyclopedia of aero engines: From the pioneers to the present day</i> (5th ed.). Sutton Publishing.<br><br>
+      Heywood, J. B. (2018). <i>Internal combustion engine fundamentals</i> (2nd ed.). McGraw-Hill Education.
     </p>
   `
 };

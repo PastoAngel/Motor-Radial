@@ -1,10 +1,5 @@
-
 /* =========================================================
    PESTAÑAS: DESPIECE 3D, DESPIECE EN 8 IMÁGENES Y RADIAL
-   ---------------------------------------------------------
-   Para poner tus 8 imágenes reales:
-   Guárdalas en img/ y reemplaza cada <div class="cad-slot-...">
-   por su <img src="./img/..." ...> indicado en el comentario.
    ========================================================= */
 
 var PESTANA_DESPIECE = {
@@ -23,13 +18,13 @@ agregarPestana(PESTANA_DESPIECE);
 
 // Colores e imágenes de las 7 piezas para la ventana estilo CAD
 const CAD_PIEZAS = [
-  ['PISTÓN', 'Sube y baja en el cilindro al recibir la fuerza de la combustión.', '#a855f7', 'pieza_piston.png', ''],
-  ['BIELA', 'Une el pistón con el cigüeñal y convierte su vaivén en giro.', '#38bdf8', 'pieza_biela.png', ''],
-  ['BIELA AUXILIAR', 'Se articula en la biela principal para mover los demás pistones.', '#ff7a18', 'pieza_biela_aux.png', ''],
-  ['CIGÜEÑAL', 'Convierte el vaivén del pistón en giro.', '#f59e0b', 'pieza_ciguenal.png', ''],
-  ['CAMISA DE SECCIÓN', 'Cilindro donde se desliza el pistón.', '#10b981', 'pieza_camisa.png', ''],
-  ['TAPETA', 'Tapa que cierra y sella el cilindro.', '#06b6d4', 'pieza_tapeta.png', ''],
-  ['CUERPO', 'Bloque central que sostiene los cilindros y aloja el cigüeñal.', '#34d399', 'pieza_cuerpo.png', 'full']
+  ['PISTÓN', 'Sube y baja en el cilindro al recibir la fuerza de la combustión.', '#a855f7', 'imagen2.png', ''],
+  ['BIELA', 'Une el pistón con el cigüeñal y convierte su vaivén en giro.', '#38bdf8', 'imagen3.png', ''],
+  ['BIELA AUXILIAR', 'Se articula en la biela principal para mover los demás pistones.', '#ff7a18', 'imagen4.png', ''],
+  ['CIGÜEÑAL', 'Convierte el vaivén del pistón en giro.', '#f59e0b', 'imagen5.png', ''],
+  ['CAMISA DE SECCIÓN', 'Cilindro donde se desliza el pistón.', '#10b981', 'imagen6.png', ''],
+  ['TAPETA', 'Tapa que cierra y sella el cilindro.', '#06b6d4', 'imagen7.png', ''],
+  ['CUERPO', 'Bloque central que sostiene los cilindros y aloja el cigüeñal.', '#34d399', 'imagen8.png', 'full']
 ];
 
 var PESTANA_DESPIECE_FICHAS = {
@@ -41,10 +36,7 @@ var PESTANA_DESPIECE_FICHAS = {
     <div class="cad-grid">
       <div class="cad-left">
         <div class="cad-hero">
-          <!-- IMAGEN 1 DE 8: reemplaza el div de abajo por: <img src="./img/despiece_completo.png" alt="Despiece completo"> -->
-          <div class="cad-slot-hero">
-            <div>📷 Espacio Imagen 1 de 8 (Diagrama completo)<small>./img/despiece_completo.png</small></div>
-          </div>
+          <img src="./img/img_piezas/imagen1.png" alt="Despiece completo">
         </div>
         <div class="cad-flow-box">
           <b>¿CÓMO FUNCIONA?</b>
@@ -55,8 +47,7 @@ var PESTANA_DESPIECE_FICHAS = {
       <div class="cad-right">
         ${CAD_PIEZAS.map((p, i) => `
           <div class="cad-card ${p[4]}" style="--col:${p[2]}" data-ci="${i}">
-            <!-- IMAGEN ${i + 2} DE 8: reemplaza el div de abajo por: <img class="cad-thumb" src="./img/${p[3]}" alt="${p[0]}"> -->
-            <div class="cad-slot-mini">📷 Img ${i + 2}<br>${p[3]}</div>
+            <img class="cad-thumb" src="./img/img_piezas/${p[3]}" alt="${p[0]}">
             <div>
               <b>${p[0]}</b>
               <p>${p[1]}</p>

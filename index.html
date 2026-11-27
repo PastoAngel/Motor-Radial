@@ -45,10 +45,36 @@
   <script src="./js/motor3d.js"></script>
   <script src="./js/app.js"></script>
 
-  <!-- 4. Registro PWA (solo se activa en web/GitHub Pages, nunca da error en USB) -->
+  <!-- 4. Registro PWA (desactivado en local/USB para editar en vivo; auto-actualizable en web) -->
   <script>
-    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    if ('serviceWorker' in navigator) {
+      const esLocal = location.protocol === 'file:' ||
+        location.hostname === 'localhost' ||
+        location.hostname === '127.0.0.1';
+
+      if (esLocal) {
+        // En Live Server limpia cualquier SW viejo para que siempre veas cambios al instante
+        if (location.protocol !== 'file:') {
+          navigator.serviceWorker.getRegistrations()
+            .then(regs => regs.forEach(r => r.unregister()))
+            .catch(() => {});
+        }
+      } else {
+        // En GitHub Pages: detecta cambios reales en sw.js y recarga una vez al actualizar
+        const yaTeniaSW = !!navigator.serviceWorker.controller;
+        let recargando = false;
+
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (yaTeniaSW && !recargando) {
+            recargando = true;
+            location.reload();
+          }
+        });
+
+        navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
+          .then(reg => reg.update().catch(() => {}))
+          .catch(() => {});
+      }
     }
   </script>
 </body>

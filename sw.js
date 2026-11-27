@@ -1,6 +1,7 @@
 /* =========================================================
-   SERVICE WORKER (CACHÉ OFFLINE + ACTUALIZACIÓN AUTOMÁTICA)
-   Si agregas un archivo nuevo en js/pestanas/, añádelo a ARCHIVOS.
+   SERVICE WORKER (CACHÉ OFFLINE + ACTUALIZACIÓN RÁPIDA)
+   Sube el número de versión (v3, v4...) cuando publiques
+   cambios importantes y agrega aquí las nuevas imágenes.
    ========================================================= */
 
 const CACHE = 'motor-radial-v3';
@@ -23,14 +24,18 @@ const ARCHIVOS = [
   './js/app.js'
 ];
 
-// Instala y guarda todos los archivos para uso offline
+// Instala y descarga archivos frescos (sin usar caché HTTP vieja)
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(ARCHIVOS)).then(() => self.skipWaiting())
+    caches.open(CACHE)
+      .then(c => Promise.all(
+        ARCHIVOS.map(url => c.add(new Request(url, { cache: 'reload' })))
+      ))
+      .then(() => self.skipWaiting())
   );
 });
 
-// Limpia versiones viejas de caché
+// Borra versiones anteriores de caché y toma el control inmediato
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
@@ -39,16 +44,27 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Estrategia Network-First: si hay internet baja lo último de GitHub; si no, usa caché offline
+// Network-First con revalidación real (no-cache) y respaldo offline
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+
+  const url = new URL(e.request.url);
+  if (url.origin !== location.origin) return;
+
   e.respondWith(
-    fetch(e.request)
+    fetch(e.request, { cache: 'no-cache' })
       .then(res => {
-        const copia = res.clone();
-        caches.open(CACHE).then(c => c.put(e.request, copia));
+        if (res && res.ok) {
+          const copia = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, copia));
+        }
         return res;
       })
-      .catch(() => caches.match(e.request))
+      .catch(() =>
+        caches.match(e.request, { ignoreSearch: true }).then(resp => {
+          if (resp) return resp;
+          if (e.request.mode === 'navigate') return caches.match('./index.html');
+        })
+      )
   );
 });

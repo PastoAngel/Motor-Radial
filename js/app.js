@@ -10,7 +10,6 @@
 
   // Temas de fondo por pestaña (definidos en css/tema.css)
   const TEMAS = {
-    'historia-combustion': 'indigo',
     'aviacion': 'indigo',
     'despiece': 'petroleo',
     'despiece-fichas': 'petroleo',

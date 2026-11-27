@@ -4,7 +4,7 @@
    cambios importantes y agrega aquí las nuevas imágenes.
    ========================================================= */
 
-const CACHE = 'motor-radial-v3';
+const CACHE = 'motor-radial-v4';
 
 const ARCHIVOS = [
   './',

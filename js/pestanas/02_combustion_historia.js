@@ -20,16 +20,3 @@ var PESTANA_COMBUSTION = {
 };
 agregarPestana(PESTANA_COMBUSTION);
 
-var PESTANA_HISTORIA_MOTOR = {
-  id: 'historia-combustion',
-  alineacion: '',
-  html: `
-    <h2>¿Quién creó el motor de combustión?</h2>
-    ${tl(H4)}
-    <div class="note">
-      <b>No fue una sola persona:</b> Otto hizo práctico el motor de cuatro tiempos (1876)
-      y Benz lo llevó al automóvil (1885). Antecedente: Huygens, motor de pólvora (1678).
-    </div>
-  `
-};
-agregarPestana(PESTANA_HISTORIA_MOTOR);

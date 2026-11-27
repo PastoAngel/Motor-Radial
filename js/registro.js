@@ -52,11 +52,4 @@ const PT = [
   ['body', 'CUERPO', 'Bloque central que sostiene los cilindros y aloja el cigüeñal.']
 ];
 
-const H4 = [
-  ['1807', 'François Isaac de Rivaz', 'Patenta un motor de hidrógeno con encendido por chispa y lo instala en un carruaje.'],
-  ['1860', 'Étienne Lenoir', 'Primer motor de gas usado comercialmente (sin compresión). ~280 construidos hacia 1867.'],
-  ['1861–62', 'Alphonse Beau de Rochas', 'Describe el principio de cuatro tiempos; su patente fue declarada inválida.'],
-  ['1876', 'Nikolaus Otto', 'Patenta el primer motor de cuatro tiempos práctico, con Daimler y Maybach.'],
-  ['1885', 'Karl Benz', 'Patent-Motorwagen: motor de 4 tiempos en el que se considera el primer automóvil.'],
-  ['1892–97', 'Rudolf Diesel', 'Propone el encendido por compresión; el primer motor funcional es de 1897.']
-];
+

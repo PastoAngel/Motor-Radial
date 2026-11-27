@@ -1,0 +1,761 @@
+/* =========================================================
+   ESTILOS GENERALES DE LA APP (USA LAS VARIABLES DE tema.css)
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: radial-gradient(ellipse at 70% 40%, var(--fondo-1), var(--fondo-2) 70%);
+  color: var(--texto);
+  font: 600 clamp(14px, 1.4vw, 20px) / 1.45 var(--fuente-texto);
+  overflow: hidden;
+  height: 100vh;
+}
+
+#gl {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Pestañas / Diapositivas ---- */
+.s {
+  position: absolute;
+  inset: 0;
+  padding: 3.5vh 5vw 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.3vh;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(24px);
+  transition: .6s;
+}
+
+.s.on {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.L > * {
+  max-width: 46vw;
+}
+
+/* ---- Títulos y textos ---- */
+h1, h2, .c > b {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 7vw;
+  line-height: 1;
+}
+
+h1 span {
+  color: var(--primario);
+}
+
+h2 {
+  font-size: 2.6vw;
+  text-shadow: 0 0 24px var(--p-40, #38bdf866);
+}
+
+.pill {
+  border: 1px solid var(--primario);
+  color: var(--primario);
+  border-radius: 30px;
+  padding: .2em 1em;
+  width: max-content;
+  letter-spacing: .2em;
+  font-size: .8em;
+}
+
+h5 {
+  color: var(--secundario, #34d399);
+  letter-spacing: .3em;
+}
+
+.hint {
+  color: #7f93b8;
+  font-size: .82em;
+}
+
+.big {
+  font-size: 1.18em;
+  color: #cfe0ff;
+}
+
+.big b, p b {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ---- Lista de integrantes ---- */
+.team {
+  list-style: none;
+  display: grid;
+  gap: .6vh;
+}
+
+.team li {
+  border: 1px solid var(--p-40, #38bdf866);
+  border-radius: 30px;
+  padding: .25em .6em;
+  display: flex;
+  gap: .8em;
+  align-items: center;
+  background: var(--tarjeta);
+}
+
+.team i {
+  background: var(--primario);
+  color: #06101f;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  font-size: .8em;
+  font-weight: 900;
+}
+
+/* ---- Cuadrícula y tarjetas ---- */
+.g {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2vw;
+}
+
+.g2 {
+  display: grid;
+  grid-template-columns: 1.35fr .9fr;
+  gap: 1.4vw;
+  align-items: stretch;
+}
+
+.c {
+  background: var(--tarjeta);
+  border: 1px solid var(--p-35, #38bdf855);
+  border-radius: 14px;
+  padding: .9vw 1.1vw;
+  backdrop-filter: blur(6px);
+  transition: transform .4s, border-color .4s, box-shadow .4s;
+}
+
+.c.foco {
+  border-color: var(--primario);
+  box-shadow: 0 0 24px var(--p-40, #38bdf866);
+  transform: translateY(-3px);
+}
+
+.on .c {
+  animation: up .7s both;
+  animation-delay: calc(var(--i) * .12s);
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.c > b {
+  font-size: 1.2em;
+  color: var(--secundario, #34d399);
+}
+
+.c h4 {
+  color: #fff;
+  font-size: 1.05em;
+}
+
+.c p {
+  font-size: .9em;
+  color: var(--texto-suave);
+}
+
+.c canvas {
+  width: 100%;
+  display: block;
+}
+
+.note {
+  background: var(--p-15, #38bdf81f);
+  border: 1px solid var(--p-30, #38bdf844);
+  border-radius: 10px;
+  padding: .55em 1em;
+  color: #dbeafe;
+  font-size: .92em;
+}
+
+.row {
+  display: flex;
+  gap: 3vw;
+  align-items: center;
+}
+
+canvas {
+  max-width: 100%;
+}
+
+/* ---- Tipografía matemática estilo LaTeX (100% offline) ---- */
+.ltx {
+  font-family: var(--fuente-math);
+  font-size: 1.06em;
+  letter-spacing: .01em;
+  color: #f8fafc;
+}
+
+.ltx var {
+  font-family: var(--fuente-math);
+  font-style: italic;
+  color: #7dd3fc;
+  font-weight: 600;
+}
+
+.ltx sub, .ltx sup {
+  font-style: normal;
+  font-size: .7em;
+  color: #cbd5e1;
+}
+
+.mdot {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  color: #7dd3fc;
+}
+
+.mdot::before {
+  content: '·';
+  position: absolute;
+  top: -.5em;
+  left: .28em;
+  font-style: normal;
+  font-weight: 900;
+  color: #7dd3fc;
+}
+
+.frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  font-size: .86em;
+  line-height: 1.15;
+  margin: 0 .18em;
+}
+
+.frac > span:first-child {
+  border-bottom: 1.5px solid #cbd5e1;
+  padding: 0 .35em .12em;
+}
+
+.frac > span:last-child {
+  padding-top: .12em;
+}
+
+/* ---- Ventanas amplias de ecuaciones y operaciones ---- */
+.eq-box {
+  background: var(--tarjeta);
+  border: 1px solid var(--p-35, #38bdf855);
+  border-radius: 16px;
+  padding: 1.4vw 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3vh;
+  backdrop-filter: blur(6px);
+}
+
+.eq-lg {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .45em;
+  font-size: 1.35em;
+  padding: .35em .7em;
+  border-radius: 10px;
+  background: #060b1866;
+  border-left: 3px solid var(--primario);
+}
+
+.eq-lg.res {
+  border-left-color: var(--secundario, #34d399);
+  background: #061b1877;
+}
+
+.eq-grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1vw;
+}
+
+.paso {
+  opacity: .1;
+  transform: translateY(8px);
+  transition: opacity .5s, transform .5s;
+}
+
+.paso.ver {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Espacios para imágenes de piezas y evidencias ---- */
+.foto {
+  width: 100%;
+  height: 22vh;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--p-35, #38bdf855);
+  display: block;
+  margin-bottom: .5em;
+  background: #060b18;
+}
+
+.slot-img {
+  width: 100%;
+  height: 22vh;
+  border: 2px dashed var(--p-40, #38bdf866);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: .8em;
+  color: #7f93b8;
+  font-size: .82em;
+  background: #060b1866;
+  margin-bottom: .5em;
+}
+
+.slot-img small {
+  display: block;
+  color: var(--primario);
+  margin-top: .2em;
+}
+
+/* ---- Ventana especial: Despiece de 8 imágenes (estilo CAD animado) ---- */
+.cad-sub {
+  color: var(--primario);
+  font-size: .98em;
+  margin-top: -.6vh;
+}
+
+.cad-grid {
+  display: grid;
+  grid-template-columns: .95fr 1.45fr;
+  gap: 1.3vw;
+  align-items: stretch;
+}
+
+.cad-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2vh;
+}
+
+.cad-hero {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: .8vw;
+  height: 50vh;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--p-35, #38bdf855);
+  overflow: hidden;
+}
+
+.cad-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.cad-slot-hero {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #94a3b8;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #334155;
+  font-size: .9em;
+  padding: 1em;
+}
+
+.cad-slot-hero small {
+  display: block;
+  color: #0284c7;
+  margin-top: .3em;
+}
+
+.cad-flow-box {
+  background: var(--tarjeta);
+  border: 1px solid var(--p-35, #38bdf855);
+  border-radius: 14px;
+  padding: .8em 1.1em;
+  font-size: .9em;
+}
+
+.cad-flow-box b {
+  display: block;
+  color: var(--primario);
+  font-family: var(--fuente-titulo);
+  font-size: .85em;
+  margin-bottom: .25em;
+}
+
+.cad-right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .9vw;
+}
+
+.cad-card {
+  background: var(--tarjeta);
+  border: 1.5px solid var(--p-35, #38bdf855);
+  border-radius: 14px;
+  padding: .55vw .85vw;
+  display: flex;
+  align-items: center;
+  gap: .85vw;
+  cursor: pointer;
+  transition: transform .35s, border-color .35s, box-shadow .35s, background .35s;
+}
+
+.cad-card.full {
+  grid-column: 1 / -1;
+}
+
+.cad-card.activo,
+.cad-card:hover {
+  border-color: var(--col, var(--primario));
+  box-shadow: 0 0 22px var(--col, var(--primario));
+  background: #102042ee;
+  transform: translateY(-2px) scale(1.015);
+}
+
+.cad-thumb {
+  width: 5.2vw;
+  height: 9.5vh;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #ffffff12;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.cad-slot-mini {
+  width: 5.2vw;
+  height: 9.5vh;
+  border: 1.5px dashed var(--col, var(--primario));
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: .62em;
+  color: #9fb4d8;
+  padding: 4px;
+  flex-shrink: 0;
+  background: #060b1866;
+}
+
+.cad-card b {
+  display: block;
+  color: var(--col, var(--primario));
+  font-family: var(--fuente-titulo);
+  font-size: .88em;
+  letter-spacing: .04em;
+}
+
+.cad-card p {
+  font-size: .78em;
+  line-height: 1.25;
+  color: var(--texto-suave);
+  margin-top: .15em;
+}
+
+/* ---- Vista visual de 3 cilindros en Interpretación Final ---- */
+.sim-grid {
+  display: grid;
+  grid-template-columns: .92fr 1.25fr;
+  gap: 1.2vw;
+  align-items: stretch;
+}
+
+.sim-canvas-wrap {
+  background: #060b18cc;
+  border: 1px solid var(--p-35, #38bdf855);
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  padding: .4vw;
+  overflow: hidden;
+}
+
+.sim-canvas-wrap canvas {
+  width: 100%;
+  max-height: 44vh;
+  display: block;
+}
+
+.sim-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1vh;
+}
+
+.sim-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .8vw;
+}
+
+.sim-metrics .c {
+  padding: .6vw .9vw;
+}
+
+.sim-metrics .c > b {
+  font-size: .95em;
+  color: var(--primario);
+}
+
+.sim-metrics h4 {
+  font-size: 1.15em;
+}
+
+.sim {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
+  align-items: center;
+  background: var(--tarjeta);
+  border: 1px solid var(--p-35, #38bdf855);
+  border-radius: 12px;
+  padding: .5em .9em;
+  font-size: .86em;
+}
+
+.sim label {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+.sim b {
+  color: var(--primario);
+  min-width: 5.5em;
+}
+
+/* Rectángulo indicador rojo / verde sin texto */
+.estado-luz {
+  width: 100%;
+  height: 28px;
+  border-radius: 10px;
+  background: #ef4444;
+  border: 1px solid #fca5a5;
+  box-shadow: 0 0 18px #ef444488;
+  transition: background .3s, border-color .3s, box-shadow .3s;
+}
+
+.estado-luz.ok {
+  background: #22c55e;
+  border-color: #86efac;
+  box-shadow: 0 0 18px #22c55e88;
+}
+
+/* ---- Listas interactivas (4 tiempos en naranja y despiece en cyan) ---- */
+ol {
+  list-style: none;
+  display: grid;
+  gap: 1vh;
+}
+
+ul.pt {
+  list-style: none;
+  display: grid;
+  gap: .5vh;
+}
+
+.st li, .pt li {
+  background: var(--tarjeta);
+  border: 1px solid var(--p-35, #38bdf855);
+  border-radius: 12px;
+  padding: .5em .9em;
+  cursor: pointer;
+  transition: .3s;
+}
+
+/* Solo la ventana de Combustión usa naranja */
+.st li.on {
+  border-color: #ff7a18;
+  background: #ff7a182b;
+  transform: translateX(6px);
+}
+
+.st li.on b {
+  color: #ff7a18;
+}
+
+.pt li:hover {
+  border-color: var(--primario);
+  background: var(--p-20, #38bdf82e);
+  transform: translateX(6px);
+}
+
+.st li b, .pt li b {
+  color: var(--primario);
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-size: .82em;
+}
+
+.pt li {
+  padding: .28em .75em;
+  font-size: .85em;
+  line-height: 1.25;
+}
+
+/* ---- Botones ---- */
+button {
+  background: #0b1630;
+  color: #fff;
+  border: 1px solid var(--primario);
+  border-radius: 30px;
+  padding: .35em 1em;
+  font: inherit;
+  cursor: pointer;
+  width: max-content;
+}
+
+button:hover {
+  background: var(--primario);
+  color: #06101f;
+}
+
+/* ---- Orden de encendido ---- */
+#ord {
+  display: flex;
+  gap: .5em;
+}
+
+#ord i {
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+  border: 1px solid var(--primario);
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  transition: .2s;
+}
+
+#ord i.f {
+  background: var(--secundario, #34d399);
+  border-color: var(--secundario, #34d399);
+  color: #051210;
+  box-shadow: 0 0 18px var(--secundario, #34d399);
+}
+
+/* ---- Avión animado ---- */
+.plane {
+  position: absolute;
+  top: 10vh;
+  left: -160px;
+  width: 140px;
+  animation: fly 8s linear infinite;
+}
+
+@keyframes fly {
+  to {
+    transform: translateX(115vw);
+  }
+}
+
+/* ---- Diagrama PLC ---- */
+.flow {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.n {
+  border: 1px solid var(--primario);
+  border-radius: 16px;
+  padding: 1.2em 1.6em;
+  text-align: center;
+  background: var(--tarjeta);
+  font-size: 1.3em;
+}
+
+.n small {
+  display: block;
+  font-size: .65em;
+  color: #9fb4d8;
+}
+
+.n.pl {
+  border-color: var(--secundario, #34d399);
+  box-shadow: 0 0 26px #34d39955;
+}
+
+.flow i {
+  flex: 1;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--primario), transparent) 0 0 / 60px 4px repeat-x;
+  animation: mv 1s linear infinite;
+}
+
+@keyframes mv {
+  to {
+    background-position: 60px 0;
+  }
+}
+
+/* ---- Barra de navegación ---- */
+#nav {
+  position: fixed;
+  bottom: 2.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: .7em;
+  align-items: center;
+  z-index: 5;
+}
+
+#dots {
+  display: flex;
+  gap: .35em;
+}
+
+#dots span {
+  width: .6em;
+  height: .6em;
+  border-radius: 50%;
+  background: var(--p-30, #38bdf844);
+  cursor: pointer;
+  transition: .3s;
+}
+
+#dots span.on {
+  background: var(--primario);
+  transform: scale(1.4);
+}
+
+input[type=range] {
+  accent-color: var(--primario);
+  width: 10em;
+}

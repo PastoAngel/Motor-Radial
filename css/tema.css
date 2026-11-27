@@ -1,0 +1,41 @@
+/* =========================================================
+   APARTADO DE TEMA, FONDOS Y COLORES (EDITA SOLO ESTE ARCHIVO)
+   ---------------------------------------------------------
+   Usa formato hexadecimal #RRGGBB en --primario, --secundario
+   y --acento para que los motores 2D y 3D se sincronicen.
+   ========================================================= */
+
+:root {
+  /* Fondo principal (Portada e Inicio) */
+  --fondo-1: #0f2447;
+  --fondo-2: #060b18;
+  --tarjeta: #0b1630cc;
+
+  /* Paleta balanceada */
+  --primario: #38bdf8;        /* Azul cyan (títulos, deslizadores, bordes) */
+  --secundario: #34d399;      /* Verde menta (subtítulos, números, notas) */
+  --acento: #f59e0b;          /* Ámbar sutil (solo cigüeñal 3D y punto activo) */
+  --texto: #e6efff;           /* Texto general */
+  --texto-suave: #b8c8e8;     /* Párrafos secundarios */
+
+  /* Tipografías */
+  --fuente-titulo: Orbitron, 'Segoe UI', Arial, sans-serif;
+  --fuente-texto: 'Segoe UI', Rajdhani, Arial, sans-serif;
+  --fuente-math: 'Cambria Math', 'Latin Modern Math', Georgia, 'Times New Roman', serif;
+}
+
+/* ---- Variaciones suaves de fondo según la pestaña ---- */
+body[data-tema="indigo"] {
+  --fondo-1: #1e1b4b;
+  --fondo-2: #070814;
+}
+
+body[data-tema="petroleo"] {
+  --fondo-1: #0d333b;
+  --fondo-2: #050f14;
+}
+
+body[data-tema="grafito"] {
+  --fondo-1: #182234;
+  --fondo-2: #070b12;
+}

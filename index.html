@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#060b18">
+  <title>Motor Radial — App Interactiva</title>
+
+  <!-- PWA e ícono -->
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./img/icon.svg" type="image/svg+xml">
+
+  <!-- Estilos (tema editable + diseño general) -->
+  <link rel="stylesheet" href="./css/tema.css">
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+  <!-- Lienzo 3D de fondo -->
+  <canvas id="gl"></canvas>
+
+  <!-- Contenedor donde se cargan todas las pestañas -->
+  <main id="m"></main>
+
+  <!-- Barra de navegación inferior -->
+  <div id="nav">
+    <button id="pv" title="Anterior">◀</button>
+    <div id="dots"></div>
+    <button id="nx" title="Siguiente">▶</button>
+    <button id="fs" title="Pantalla completa">⛶</button>
+  </div>
+
+  <!-- 1. Registro base y helpers -->
+  <script src="./js/registro.js"></script>
+
+  <!-- 2. Pestañas por integrante/sección (cada pestaña es una variable global que se agrega) -->
+  <script src="./js/pestanas/01_inicio.js"></script>
+  <script src="./js/pestanas/02_combustion_historia.js"></script>
+  <script src="./js/pestanas/03_aviacion_estrella.js"></script>
+  <script src="./js/pestanas/04_despiece_radial.js"></script>
+  <script src="./js/pestanas/05_ventas.js"></script>
+
+  <!-- 3. Motores gráficos y arranque de la app -->
+  <script src="./js/motor2d.js"></script>
+  <script src="./js/motor3d.js"></script>
+  <script src="./js/app.js"></script>
+
+  <!-- 4. Registro PWA (solo se activa en web/GitHub Pages, nunca da error en USB) -->
+  <script>
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>

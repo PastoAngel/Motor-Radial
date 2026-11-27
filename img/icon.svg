@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="110" fill="#060b18"/>
+  <circle cx="256" cy="256" r="200" fill="#0f2447" stroke="#38bdf8" stroke-width="10"/>
+  <!-- 7 cilindros en estrella -->
+  <g fill="#1d6fd1" stroke="#38bdf8" stroke-width="6">
+    <rect x="232" y="70" width="48" height="90" rx="8" transform="rotate(0 256 256)"/>
+    <rect x="232" y="70" width="48" height="90" rx="8" transform="rotate(51.4 256 256)"/>
+    <rect x="232" y="70" width="48" height="90" rx="8" transform="rotate(102.8 256 256)"/>
+    <rect x="232" y="70" width="48" height="90" rx="8" transform="rotate(154.3 256 256)"/>
+    <rect x="232" y="70" width="48" height="90" rx="8" transform="rotate(205.7 256 256)"/>
+    <rect x="232" y="70" width="48" height="90" rx="8" transform="rotate(257.1 256 256)"/>
+    <rect x="232" y="70" width="48" height="90" rx="8" transform="rotate(308.6 256 256)"/>
+  </g>
+  <!-- Hélice y centro -->
+  <rect x="242" y="96" width="28" height="320" rx="14" fill="#cc2222" transform="rotate(32 256 256)"/>
+  <circle cx="256" cy="256" r="56" fill="#2a3550" stroke="#ff7a18" stroke-width="10"/>
+  <circle cx="256" cy="256" r="22" fill="#ff7a18"/>
+</svg>

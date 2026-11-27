@@ -1,0 +1,19 @@
+{
+  "name": "Motor Radial — App Interactiva",
+  "short_name": "Motor Radial",
+  "description": "Presentación interactiva 3D y 2D sobre el funcionamiento e historia del motor radial.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#060b18",
+  "theme_color": "#060b18",
+  "icons": [
+    {
+      "src": "./img/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

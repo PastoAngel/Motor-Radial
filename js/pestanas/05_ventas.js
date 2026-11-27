@@ -1,0 +1,313 @@
+/* =========================================================
+   PESTAÑAS: EN LÍNEA, EN V, VENTAS, EJERCICIO POR VENTANAS,
+   EVIDENCIAS Y REFERENCIAS
+   ========================================================= */
+
+var PESTANA_LINEA = {
+  id: 'linea',
+  alineacion: '',
+  html: `
+    <h2>Motor en línea</h2>
+    <div class="row">
+      <canvas id="c9" width="560" height="380"></canvas>
+      <p class="big">
+        Los cilindros van alineados, uno tras otro, sobre un mismo cigüeñal.
+        Es largo y estrecho. Ejemplo: el Wright Flyer de 1903, con 4 cilindros en línea.
+      </p>
+    </div>
+  `
+};
+agregarPestana(PESTANA_LINEA);
+
+var PESTANA_V = {
+  id: 'v',
+  alineacion: '',
+  html: `
+    <h2>Motor en V</h2>
+    <div class="row">
+      <canvas id="c10" width="560" height="380"></canvas>
+      <p class="big">
+        Dos bancos de cilindros forman una «V» y comparten el cigüeñal: queda más corto y compacto que el motor en línea.
+        Ejemplo: el Antoinette V8 (1905), con 8 cilindros en V a 90°.
+      </p>
+    </div>
+  `
+};
+agregarPestana(PESTANA_V);
+
+var PESTANA_VENTAS = {
+  id: 'ventas',
+  alineacion: '',
+  html: `
+    <h2>Ventas y Piezas</h2>
+    <div class="g">
+      <div class="c" style="--i:0">
+        <!-- <img class="foto" src="./img/pieza1.jpg" alt="Motor completo"> -->
+        <div class="slot-img">📷 Espacio para foto 1<small>./img/pieza1.jpg</small></div>
+        <b>01 · Modelo</b>
+        <h4>Motor Radial Completo</h4>
+        <p>Describe aquí el prototipo, dimensiones o kit educativo.</p>
+      </div>
+      <div class="c" style="--i:1">
+        <!-- <img class="foto" src="./img/pieza2.jpg" alt="Pistón y biela"> -->
+        <div class="slot-img">📷 Espacio para foto 2<small>./img/pieza2.jpg</small></div>
+        <b>02 · Detalle</b>
+        <h4>Componentes y Materiales</h4>
+        <p>Describe aquí ventajas, materiales o acabados de las piezas.</p>
+      </div>
+      <div class="c" style="--i:2">
+        <!-- <img class="foto" src="./img/pieza3.jpg" alt="Paquete / contacto"> -->
+        <div class="slot-img">📷 Espacio para foto 3<small>./img/pieza3.jpg</small></div>
+        <b>03 · Oferta</b>
+        <h4>Precio y Contacto</h4>
+        <p>Agrega aquí costos, paquetes o datos de contacto.</p>
+      </div>
+    </div>
+    <div class="note">Edita los textos y rutas de fotos en <b>js/pestanas/05_ventas.js</b>.</div>
+  `
+};
+agregarPestana(PESTANA_VENTAS);
+
+// ---- VENTANA 1: PLANTEAMIENTO DEL PROBLEMA ----
+var PESTANA_EJERCICIO_1 = {
+  id: 'ejercicio-problema',
+  alineacion: '',
+  html: `
+    <h2>Planteamiento del Problema</h2>
+    <div class="g2">
+      <div class="c" style="--i:0;display:flex;flex-direction:column;justify-content:center;gap:1.8vh">
+        <p class="big" style="line-height:1.65">
+          Durante una inspección de rutina en planta, se detecta que un motor estrella de
+          <b>3 cilindros</b> que acciona un compresor de aire está trabajando por debajo de su velocidad nominal.
+          El equipo únicamente cuenta con instrumentación básica de tablero, registrando una velocidad de
+          <span class="ltx"><var>n</var> = 900 rpm</span> y un consumo de diésel de
+          <span class="ltx"><span class="mdot">m</span><sub>f</sub> = 3.6 kg/h</span>
+          (<span class="ltx"><var>PCI</var> = 42,000 kJ/kg</span>).
+          De acuerdo con la ficha técnica del fabricante, a ese régimen el motor mantiene un torque constante de
+          <span class="ltx"><var>T</var> = 100 N·m</span>.
+        </p>
+        <div class="note" style="font-size:1.15em">
+          <b>¿El motor está en condiciones seguras de continuar?</b>
+        </div>
+      </div>
+
+      <div class="c" style="--i:1;display:flex;flex-direction:column;justify-content:center">
+        <!-- Reemplaza por: <img class="foto" style="height:42vh" src="./img/compresor.jpg" alt="Motor estrella en planta"> -->
+        <div class="slot-img" style="height:42vh;margin-bottom:0">
+          <div>📷 Espacio para imagen del motor / compresor<small>./img/compresor.jpg</small></div>
+        </div>
+      </div>
+    </div>
+  `
+};
+agregarPestana(PESTANA_EJERCICIO_1);
+
+// ---- VENTANA 2: ECUACIONES FUNDAMENTALES (SOLO LETRAS, 10 s) ----
+var PESTANA_EJERCICIO_FUND = {
+  id: 'ejercicio-fundamentales',
+  alineacion: '',
+  html: `
+    <h2>Ecuaciones Fundamentales</h2>
+    <div class="eq-box ltx">
+      <div class="eq-grid2">
+        <div class="eq-lg paso" data-t="0">
+          <var>W</var> = <var>F</var> · <var>d</var>
+        </div>
+        <div class="eq-lg paso" data-t="2">
+          <var>P</var><sub>mec</sub> = <var>T</var> · <var>ω</var>
+          &nbsp;&nbsp;,&nbsp;&nbsp;
+          <var>ω</var> = <span class="frac"><span>2<var>π</var> <var>n</var></span><span>60</span></span>
+        </div>
+        <div class="eq-lg paso" data-t="4">
+          <var>P</var><sub>comb</sub> = <span class="frac"><span><span class="mdot">m</span><sub>f</sub> · <var>PCI</var></span><span>3600</span></span>
+        </div>
+        <div class="eq-lg paso" data-t="6">
+          <var>P</var><sub>pérdidas</sub> = <var>P</var><sub>comb</sub> − <var>P</var><sub>mec</sub>
+        </div>
+        <div class="eq-lg paso" data-t="8">
+          <var>BSFC</var> = <span class="frac"><span><span class="mdot">m</span><sub>f</sub></span><span><var>P</var><sub>mec</sub></span></span>
+        </div>
+        <div class="eq-lg paso" data-t="8">
+          Δ<var>D</var> = <var>D</var><sub>0</sub> · <var>α</var> · Δ<var>T</var>
+        </div>
+      </div>
+    </div>
+    <div class="note paso" data-t="9">
+      Partimos de estas leyes físicas fundamentales antes de sustituir los datos medidos en planta.
+    </div>
+  `
+};
+agregarPestana(PESTANA_EJERCICIO_FUND);
+
+// ---- VENTANA 3: OPERACIÓN 1 — POTENCIA MECÁNICA ----
+var PESTANA_EJERCICIO_OP1 = {
+  id: 'ejercicio-op1',
+  alineacion: '',
+  html: `
+    <h2>1 · Potencia Mecánica (<span class="ltx"><var>P</var><sub>mec</sub></span>)</h2>
+    <div class="eq-box ltx">
+      <div class="eq-lg paso" data-t="0">
+        <var>ω</var> = <span class="frac"><span>2<var>π</var> <var>n</var></span><span>60</span></span>
+        = <span class="frac"><span>2<var>π</var> (900)</span><span>60</span></span>
+        = <b>94.25 rad/s</b>
+      </div>
+      <div class="eq-lg paso" data-t="2">
+        <var>P</var><sub>mec</sub> = <var>T</var> · <var>ω</var>
+        = (100 N·m)(94.25 rad/s)
+        = <b>9,425 W</b>
+      </div>
+      <div class="eq-lg res paso" data-t="4">
+        <var>P</var><sub>mec</sub> = <b>9.43 kW</b>
+      </div>
+    </div>
+    <div class="note paso" data-t="4">
+      Es la potencia mecánica útil real que llega al eje del compresor sin usar torquímetro.
+    </div>
+  `
+};
+agregarPestana(PESTANA_EJERCICIO_OP1);
+
+// ---- VENTANA 4: OPERACIÓN 2 — BALANCE ENERGÉTICO ----
+var PESTANA_EJERCICIO_OP2 = {
+  id: 'ejercicio-op2',
+  alineacion: '',
+  html: `
+    <h2>2 · Balance Energético (<span class="ltx"><var>P</var><sub>comb</sub></span> y <span class="ltx"><var>P</var><sub>pérdidas</sub></span>)</h2>
+    <div class="eq-box ltx">
+      <div class="eq-lg paso" data-t="0">
+        <var>P</var><sub>comb</sub> = <span class="frac"><span><span class="mdot">m</span><sub>f</sub> · <var>PCI</var></span><span>3600</span></span>
+        = <span class="frac"><span>(3.6)(42,000)</span><span>3600</span></span>
+        = <b>42.00 kW</b>
+      </div>
+      <div class="eq-lg paso" data-t="2">
+        <var>P</var><sub>pérdidas</sub> = <var>P</var><sub>comb</sub> − <var>P</var><sub>mec</sub>
+        = 42.00 − 9.43
+        = <b>32.57 kW</b>
+      </div>
+      <div class="eq-lg res paso" data-t="4">
+        Por cilindro = <span class="frac"><span>32.57</span><span>3</span></span> = <b>10.86 kW/cil</b>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        Razón = <span class="frac"><span>32.57</span><span>9.43</span></span> = <b>3.45× más calor que trabajo</b>
+      </div>
+    </div>
+    <div class="note paso" data-t="4">
+      De cada 42 kW de diésel quemado, más de tres cuartas partes salen convertidas en calor al cuarto.
+    </div>
+  `
+};
+agregarPestana(PESTANA_EJERCICIO_OP2);
+
+// ---- VENTANA 5: OPERACIÓN 3 — CONSUMO Y DILATACIÓN ----
+var PESTANA_EJERCICIO_OP3 = {
+  id: 'ejercicio-op3',
+  alineacion: '',
+  html: `
+    <h2>3 · Consumo (<span class="ltx"><var>BSFC</var></span>) y Dilatación (<span class="ltx">Δ<var>D</var></span>)</h2>
+    <div class="eq-box ltx">
+      <div class="eq-lg paso" data-t="0">
+        <var>BSFC</var> = <span class="frac"><span><span class="mdot">m</span><sub>f</sub></span><span><var>P</var><sub>mec</sub></span></span>
+        = <span class="frac"><span>3,600 g/h</span><span>9.43 kW</span></span>
+        = <b>382 g/kW·h</b> &nbsp;<small style="color:#9fb4d8">(normal ~220 g/kW·h)</small>
+      </div>
+      <div class="eq-lg paso" data-t="2">
+        Δ<var>D</var><sub>Al</sub> = (100)(23×10<sup>−6</sup>)(75) = <b>0.173 mm</b>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        Δ<var>D</var><sub>Ac</sub> = (100)(12×10<sup>−6</sup>)(25) = <b>0.030 mm</b>
+      </div>
+      <div class="eq-lg res paso" data-t="4">
+        Cierre = Δ<var>D</var><sub>Al</sub> − Δ<var>D</var><sub>Ac</sub>
+        = 0.173 − 0.030 = <b>0.143 mm &gt; 0.080 mm</b>
+      </div>
+    </div>
+    <div class="note paso" data-t="4">
+      El aluminio del pistón dilata casi el doble que el acero: rompe la película de aceite y genera fricción crítica.
+    </div>
+  `
+};
+agregarPestana(PESTANA_EJERCICIO_OP3);
+
+// ---- VENTANA 6: INTERPRETACIÓN FINAL + VISUALIZACIÓN 3 CILINDROS ----
+var PESTANA_EJERCICIO_3 = {
+  id: 'ejercicio-interpretacion',
+  alineacion: '',
+  html: `
+    <h2>Interpretación Final</h2>
+    <div class="c" style="--i:0;padding:.65vw 1vw">
+      <p style="font-size:.96em;line-height:1.45;color:#cfe0ff">
+        Aunque el tablero básico no muestre alarmas avanzadas, el balance energético demuestra que mantener el equipo trabajando en estas condiciones
+        <b>desperdicia combustible</b> y somete el cuarto de máquinas y los 3 cilindros a una
+        <b>carga térmica crítica (<span class="ltx"><span id="t_pp">32.57</span> kW</span>)</b>,
+        con alto riesgo de desgaste acelerado en bielas/pistones o falla por sobrecalentamiento.
+      </p>
+    </div>
+
+    <div class="sim-grid">
+      <div class="sim-canvas-wrap">
+        <canvas id="c_sim3" width="440" height="320"></canvas>
+      </div>
+
+      <div class="sim-right">
+        <div class="sim">
+          <label><span class="ltx"><var>n</var></span>: <input id="in_rpm" type="range" min="600" max="1800" step="50" value="900"> <b id="val_rpm">900 rpm</b></label>
+          <label><span class="ltx"><span class="mdot">m</span><sub>f</sub></span>: <input id="in_mf" type="range" min="1.5" max="6.0" step="0.1" value="3.6"> <b id="val_mf">3.6 kg/h</b></label>
+          <button id="btn_reset">Restablecer</button>
+        </div>
+
+        <div class="sim-metrics">
+          <div class="c"><b><span class="ltx"><var>P</var><sub>mec</sub></span></b><h4 id="o_pm">9.43 kW</h4><p>Potencia útil al eje</p></div>
+          <div class="c"><b><span class="ltx"><var>P</var><sub>pérdidas</sub></span></b><h4 id="o_pp">32.57 kW</h4><p id="o_cil">10.86 kW / cilindro</p></div>
+          <div class="c"><b><span class="ltx"><var>BSFC</var></span></b><h4 id="o_bsfc">382 g/kW·h</h4><p>Promedio normal ~220</p></div>
+          <div class="c"><b><span class="ltx">Δ<var>D</var></span> cierre</b><h4 id="o_cierre">0.143 mm</h4><p>Película aceite 0.080 mm</p></div>
+        </div>
+
+        <!-- Rectángulo indicador rojo / verde sin texto -->
+        <div id="o_alerta" class="estado-luz"></div>
+      </div>
+    </div>
+  `
+};
+agregarPestana(PESTANA_EJERCICIO_3);
+
+var PESTANA_EVIDENCIAS = {
+  id: 'evidencias',
+  alineacion: '',
+  html: `
+    <h2>Evidencias y Piezas del Proyecto</h2>
+    <div class="g">
+      <div class="c" style="--i:0">
+        <!-- <img class="foto" src="./img/evidencia1.jpg" alt="Evidencia 1"> -->
+        <div class="slot-img">📷 Foto de pieza / armado 1<small>./img/evidencia1.jpg</small></div>
+        <h4>Pieza / Proceso 1</h4>
+        <p>Agrega aquí la descripción de esta pieza o prueba.</p>
+      </div>
+      <div class="c" style="--i:1">
+        <!-- <img class="foto" src="./img/evidencia2.jpg" alt="Evidencia 2"> -->
+        <div class="slot-img">📷 Foto de pieza / armado 2<small>./img/evidencia2.jpg</small></div>
+        <h4>Pieza / Proceso 2</h4>
+        <p>Agrega aquí la descripción de esta pieza o prueba.</p>
+      </div>
+      <div class="c" style="--i:2">
+        <!-- <img class="foto" src="./img/evidencia3.jpg" alt="Evidencia 3"> -->
+        <div class="slot-img">📷 Foto de pieza / armado 3<small>./img/evidencia3.jpg</small></div>
+        <h4>Pieza / Proceso 3</h4>
+        <p>Agrega aquí la descripción de esta pieza o prueba.</p>
+      </div>
+    </div>
+    <div class="note">Guarda tus fotos en <b>img/</b> y reemplaza cada recuadro punteado por su etiqueta <b>&lt;img&gt;</b>.</div>
+  `
+};
+agregarPestana(PESTANA_EVIDENCIAS);
+
+var PESTANA_REFERENCIAS = {
+  id: 'referencias',
+  alineacion: 'L',
+  motor3D: { x: 2.4, s: 1, rx: .3, ry: -.6, spin: 1, rot: 5 },
+  html: `
+    <h2>Referencias</h2>
+    <p class="big">
+      Bolton, W. (2015). <i>Programmable logic controllers</i> (6th ed.). Newnes.<br>
+      Siemens AG. (2023). <i>SIMATIC controllers – PLC overview</i>. https://www.siemens.com/simatic.
+    </p>
+  `
+};
+agregarPestana(PESTANA_REFERENCIAS);
